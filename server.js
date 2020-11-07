@@ -32,12 +32,12 @@ fs.readdir("./commands/", (err, files) => {
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setActivity(whatever status you want here! + " Users!" , {type: 'WATCHING', url: "https://twitch.tv/kickz19"}) // good. check the bot works //Why are you messing with it lol
+  client.user.setActivity(" Users!") // good. check the bot works //Why are you messing with it lol
 });
 
 client.on('message', async (msg, message, channel) => {
   
-  if (msg.content === '/ping') { //remember to change the prefix
+  if (msg.content === 'm!ping') { //remember to change the prefix
   msg.reply('Ping?').then(m => m.edit(`${msg.author}, Pong! Latency is ${m.createdTimestamp - msg.createdTimestamp}ms. API Latency is ${Math.round(client.ping)} ms`))
   }
   
@@ -51,7 +51,7 @@ client.on('message', async (msg, message, channel) => {
 });
 
 client.on("message", (message, args) => {
-    if (message.content.startsWith("/ban")) {//remember to change the prefix
+    if (message.content.startsWith("m!ban")) {//remember to change the prefix
 
         // Easy way to get member object though mentions.
         var member = message.mentions.members.first();
